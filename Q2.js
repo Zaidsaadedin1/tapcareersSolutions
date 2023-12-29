@@ -11,3 +11,26 @@ function sumOfGivenNumber(arr,target) {
     }    
 }
 sumOfGivenNumber(numbers,7)
+
+//solution2
+function sumOfGivenNumber(array, target) {
+  const numMap = new Map();
+
+  for (let i = 0; i < numbers.length; i++) {
+    const complement = target - numbers[i];
+
+    if (numMap.has(complement)) {
+      console.log(`[${numMap.get(complement)},${i}]`);
+      return;
+    }
+
+    numMap.set(numbers[i], i);
+  }
+
+  console.log("No pair found");
+}
+
+sumOfGivenNumber(numbers, 7);
+
+//Solution 3 
+also, we can get all of the pairs but make it lope over all the numbers and save them in a list and thin print every two elements in a new line 
